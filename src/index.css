@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700;800&family=Open+Sans&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  color-scheme: dark;
+}
+
+.dark-gradient {
+  background-color: #000;
+  background: -webkit-linear-gradient(
+    to right,
+    #27273B,
+    #1D1D29
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #27273B,
+    #1D1D29
+  );
+}
