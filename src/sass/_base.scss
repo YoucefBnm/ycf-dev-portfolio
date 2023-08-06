@@ -1,0 +1,52 @@
+:root {
+    --color-primary: #1DFFC7;
+    --color-black: #0F0F14;
+    --color-black-2: #191924;
+    --color-black-3: #2E2E3D;
+    --color-light: #F3F3F3;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: 0;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+html {
+    overflow-y: scroll;
+    font-family: unset;
+    font-size: .625em;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.4;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    color-scheme: dark;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    text-transform: initial;
+    line-height: 1.6;
+    min-height: 100vh;
+    font-size: 1.8rem;
+    letter-spacing: 0.02em;
+    
+    color: #fff;
+    background: var(--color-black);
+    background: -webkit-linear-gradient(
+    to right,
+    var(--color-black),
+    var(#000)
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    var(--color-black),
+    var(#000)
+  );
+}

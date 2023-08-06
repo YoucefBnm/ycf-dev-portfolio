@@ -1,0 +1,79 @@
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+button {
+    appearance: none;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.heading {
+    font-weight: 700;
+    font-family: 'League Spartan', sans-serif;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    text-transform: uppercase;
+
+    &--lg {
+        font-size: 7.2rem;
+    }
+    &--md {
+        font-size: 4.2rem;
+
+    }
+    &--sm {
+        font-size: 3.2rem;
+    }
+}
+
+.color {
+    &--primary {
+        color: var(--color-primary);
+    }
+    &--black {
+        color: var(--color-black);
+    }
+    &--black-2 {
+        color: var(--color-black-2);
+    }
+    &--black-3 {
+        color: var(--color-black-3);
+    }
+    &--light {
+        color: var(--color-light);
+    }
+}
+.bg {
+    &--primary {
+        background-color: var(--color-primary);
+        color: #000;
+    }
+    &--black {
+        background-color: var(--color-black);
+        color: #fff;
+    }
+    &--black-2 {
+        background-color: var(--color-black-2);
+        color: #fff;
+    }
+    &--black-3 {
+        background-color: var(--color-black-3);
+        color: #fff;
+    }
+}
+
+.nav-link {
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 500;
+    transition: color ease .15s;
+    &:hover{
+        color: darken($color: #F3F3F3, $amount: 20);
+    }
+}
