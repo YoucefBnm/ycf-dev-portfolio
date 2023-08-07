@@ -3,6 +3,9 @@
     &--col {
         flex-direction: column;
     }
+    &--wrap {
+        flex-wrap: wrap;
+    }
 }
 
 .justify {
@@ -19,14 +22,7 @@
         justify-content: end;
     }
 }
-.gap {
-    &--2 {
-        gap: 2rem;
-    }
-    &--1 {
-        gap: 1rem;
-    }
-}
+
 .align {
     &--start {
         align-items: flex-start;
@@ -40,9 +36,12 @@
 }
 
 .block { display: block; }
+.inline { display: inline-block;}
 .relative { position: relative; }
 .absolute { position: absolute; }
 .fixed { position: fixed; }
+.stick { position: sticky; }
+
 .top {
     &--0 {
         top: 0;
@@ -77,35 +76,14 @@
     &--75 {
         width: 75%;
     }
+    &--80 {
+        width: 80%;
+    }
+    &--90 {
+        width: 90%;
+    }
     &--100 {
         width: 100%;
     }
 }
 
-.pad {
-
-    &--x-default {
-        padding-left: 5rem;
-        padding-right: 5rem;
-    }
-    &--y-default {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-    }
-    &--y-2 {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-    }
-}
-.mar {
-
-    &--b-1 {
-        margin-bottom: 1rem;
-    }
-    &--b-2 {
-        margin-bottom: 2rem;
-    }
-    &--b-4 {
-        margin-bottom: 4rem;
-    }
-}

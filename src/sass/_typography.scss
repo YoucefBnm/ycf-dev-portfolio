@@ -15,65 +15,75 @@ button {
 }
 
 .heading {
-    font-weight: 700;
-    font-family: 'League Spartan', sans-serif;
-    letter-spacing: -0.01em;
-    line-height: 1.2;
-    text-transform: uppercase;
-
-    &--lg {
-        font-size: 7.2rem;
+    font-family: var(--font-heading);
+    line-height: 1.1;
+    letter-spacing: 1.6%;
+    font-weight: 400;
+    &--hero {
+        font-size: 12rem;
     }
-    &--md {
-        font-size: 4.2rem;
-
+    &--title {
+        font-size: 9.2rem;
     }
-    &--sm {
-        font-size: 3.2rem;
+    &--sup {
+        line-height: 1.5;
+        font-size: 1.3rem;
+        font-weight: 500;
     }
 }
 
+.text {
+    &--center {
+        text-align: center;
+    }
+    &--sm {
+        font-size: 1.45rem;
+    }
+}
+.nav-link {
+    font: inherit;
+    text-transform: capitalize;
+    transition: color .15s ease-in;
+
+    &:hover {
+        color: var(--color-light);
+    }
+}
 .color {
+    &--grey {
+        color: var(--color-grey);
+    }
+    &--dark {
+        color: var(--color-secondary);
+    }
     &--primary {
         color: var(--color-primary);
-    }
-    &--black {
-        color: var(--color-black);
-    }
-    &--black-2 {
-        color: var(--color-black-2);
-    }
-    &--black-3 {
-        color: var(--color-black-3);
     }
     &--light {
         color: var(--color-light);
     }
 }
 .bg {
+    &--grey {
+        background-color: var(--color-grey);
+    }
+    &--dark {
+        background-color: var(--color-secondary);
+    }
     &--primary {
         background-color: var(--color-primary);
-        color: #000;
     }
-    &--black {
-        background-color: var(--color-black);
-        color: #fff;
+    &--light {
+        background-color: var(--color-light);
     }
-    &--black-2 {
-        background-color: var(--color-black-2);
-        color: #fff;
+
+    &--linear-body {
+        background-color: var(--linear-body);
     }
-    &--black-3 {
-        background-color: var(--color-black-3);
-        color: #fff;
+    &--linear-black {
+        background-color: var(--linear-black);
     }
 }
 
-.nav-link {
-    font-family: 'League Spartan', sans-serif;
-    font-weight: 500;
-    transition: color ease .15s;
-    &:hover{
-        color: darken($color: #F3F3F3, $amount: 20);
-    }
-}
+
+

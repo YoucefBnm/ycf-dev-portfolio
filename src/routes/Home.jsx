@@ -1,9 +1,13 @@
-import { Hero } from "../components"
+import { About, Contact, Hero, Stack, Work } from "../components"
 
 const Home = () => {
   return (
     <>
         <Hero />
+        <About />
+        <Stack />
+        <Work />
+        <Contact />
     </>
   )
 }

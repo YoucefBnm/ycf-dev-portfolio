@@ -1,9 +1,17 @@
 :root {
-    --color-primary: #1DFFC7;
-    --color-black: #0F0F14;
-    --color-black-2: #191924;
-    --color-black-3: #2E2E3D;
-    --color-light: #F3F3F3;
+  --color-primary: #F6AE3A;
+  --color-primary-2: #C29142;
+  --color-secondary: #000306;
+  --color-secondary-2: #061626;
+  --color-secondary-3: #3F464D;
+  --color-grey: #A0AEC0;
+  --color-light: rgba(255, 255, 255, .7);
+
+  --linear-black: linear-gradient(161deg, #040B13 0%, #111518 100%);
+  --linear-body: linear-gradient(169deg, #020D17 0%, #06121F 15.79%, #06121F 24.31%, #020D17 52.36%, #020D17 62.24%, #051321 67.76%, #020D17 72.71%, #06121F 87.59%, #06121F 100%);
+
+  --font-heading: 'League Spartan', sans-serif;
+  --font-body: 'Open Sans', sans-serif;
 }
 
 *,
@@ -26,27 +34,19 @@ html {
     -webkit-tap-highlight-color: transparent;
     touch-action: manipulation;
     color-scheme: dark;
+    scroll-snap-type: y mandatory;
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--font-body);
     font-weight: normal;
     text-transform: initial;
-    line-height: 1.6;
+    line-height: 1.55;
     min-height: 100vh;
-    font-size: 1.8rem;
-    letter-spacing: 0.02em;
-    
+    font-size: 1.6rem;
+    scroll-snap-type: y mandatory;
     color: #fff;
-    background: var(--color-black);
-    background: -webkit-linear-gradient(
-    to right,
-    var(--color-black),
-    var(#000)
-  ); /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(
-    to right,
-    var(--color-black),
-    var(#000)
-  );
+    background: var(--color-secondary);
+    background-image: var(--linear-body);
+
 }

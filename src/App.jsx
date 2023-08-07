@@ -1,16 +1,20 @@
 import { Route, Routes } from 'react-router-dom'
 import './App.scss'
 import Home from './routes/Home'
-import { Navbar } from './components'
+import { Footer, Nav } from './components'
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <Routes>
-        <Route index path='/' element={<Home />} />
-      </Routes>
+      <Nav />
+
+        <Routes>
+            <Route index path='/' element={<Home />} />
+        </Routes>
+        
+      <Footer />
+
     </>
   )
 }
