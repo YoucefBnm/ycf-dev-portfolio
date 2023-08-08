@@ -5,6 +5,9 @@ import Stack from "./Stack/Stack";
 import Work from "./Work/Work";
 import Contact from "./Contact/Contact";
 import Footer from "./Footer/Footer";
+import CustomBtn from "./CustomBtn/CustomBtn";
+import TextContainer from "./TextContainer/TextContainer";
+import CalendlyBtn from "./CalendlyBtn/CalendlyBtn";
 
 export {
     Nav,
@@ -14,4 +17,7 @@ export {
     Work,
     Contact,
     Footer,
+    CustomBtn,
+    TextContainer,
+    CalendlyBtn,
 }

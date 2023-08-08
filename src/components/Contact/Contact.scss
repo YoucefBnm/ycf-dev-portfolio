@@ -1,0 +1,37 @@
+.contact {
+    gap: 4rem;
+   
+    &__form {
+        flex-basis: 70%;
+        padding: 4rem 4rem;
+        mix-blend-mode: difference;
+        border-radius: 5rem;
+        form {
+
+        }
+    }
+    .inputGroup {
+        label {
+            font: inherit;
+            font-weight: 400;
+            text-transform: capitalize;
+        }
+        input,
+        textarea {
+            appearance: none;
+            border: none;
+            outline: none;
+            border-bottom: 1px solid var(--color-light);
+            background: none;
+            font: inherit;
+            padding: 1rem 0;
+            width: 100%;
+            transition: border-color .2s ease;
+            &:focus {
+                border-bottom: 1px solid #fff;
+            }
+
+            
+        }
+    }
+}

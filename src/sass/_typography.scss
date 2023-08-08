@@ -17,13 +17,16 @@ button {
 .heading {
     font-family: var(--font-heading);
     line-height: 1.1;
-    letter-spacing: 1.6%;
+    letter-spacing: -0.01em;
     font-weight: 400;
     &--hero {
-        font-size: 12rem;
+        font-size: 11rem;
     }
     &--title {
         font-size: 9.2rem;
+    }
+    &--md {
+        font-size: 5.2rem;
     }
     &--sup {
         line-height: 1.5;
@@ -39,6 +42,9 @@ button {
     &--sm {
         font-size: 1.45rem;
     }
+    &--underline {
+        text-decoration: underline;
+    }
 }
 .nav-link {
     font: inherit;
@@ -47,6 +53,20 @@ button {
 
     &:hover {
         color: var(--color-light);
+    }
+
+    &--footer {
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: currentColor;
+            height: 0.01em;
+        }
     }
 }
 .color {
@@ -65,23 +85,23 @@ button {
 }
 .bg {
     &--grey {
-        background-color: var(--color-grey);
+        background: var(--color-grey);
     }
     &--dark {
-        background-color: var(--color-secondary);
+        background: var(--color-secondary);
     }
     &--primary {
-        background-color: var(--color-primary);
+        background: var(--color-primary);
     }
     &--light {
-        background-color: var(--color-light);
+        background: var(--color-light);
     }
 
     &--linear-body {
-        background-color: var(--linear-body);
+        background: var(--linear-body);
     }
     &--linear-black {
-        background-color: var(--linear-black);
+        background: var(--linear-black);
     }
 }
 

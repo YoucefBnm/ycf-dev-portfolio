@@ -1,0 +1,52 @@
+.customBtn {
+    line-height: 3.2;
+    max-width: 22.5rem;
+    min-width: 13.5rem;
+    border-radius: 10rem;
+    position: relative;
+    overflow: hidden;
+    
+    &__shadow {
+        border-width: 1px;
+        border-style: solid;
+
+        &--primary {
+            
+        }
+        &--light {
+            border-color: var(--color-light);
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--color-primary);
+            z-index: -1;
+            border-radius: 20%;
+            transition: transform ease-in-out .25s;
+        }
+        &:hover {
+            &::before {
+                transform: translateY(-100%);
+                border-color: var(--color-primary);
+            }
+        }
+    }
+
+    &__bg {
+        transition: background-color ease-in-out .25s;
+        &--primary {
+            background-color: var(--color-primary);
+            color: var(--color-secondary);
+
+            &:hover {
+                background-color: darken($color: #F6AE3A, $amount: 20);
+            }
+        }
+    }
+    
+}

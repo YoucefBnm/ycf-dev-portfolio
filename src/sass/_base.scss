@@ -19,7 +19,7 @@
 *::after {
     padding: 0;
     margin: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
 }
@@ -39,9 +39,10 @@ html {
 
 body {
     font-family: var(--font-body);
-    font-weight: normal;
+    font-weight: 300;
+    letter-spacing: 0.01em;
     text-transform: initial;
-    line-height: 1.55;
+    line-height: 1.6;
     min-height: 100vh;
     font-size: 1.6rem;
     scroll-snap-type: y mandatory;

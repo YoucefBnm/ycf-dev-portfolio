@@ -1,3 +1,21 @@
+.w {
+    &--100 {
+        width: 100%;
+    }
+    &--75 {
+        width: 75%;
+    }
+    &--50 {
+        width: 50%;
+    }
+    &--25 {
+        width: 25%;
+    }
+    &--20 {
+        width: 20%;
+    }
+}
+
 .pad {
 
     &--x-default {
@@ -24,6 +42,12 @@
     &--b-4 {
         margin-bottom: 4rem;
     }
+    &--t-1 {
+        margin-top: 1rem;
+    }
+    &--t-4 {
+        margin-top: 4rem;
+    }
 }
 
 .gap {
@@ -41,5 +65,11 @@
 .overflow {
     &--hidden {
         overflow: hidden;
+    }
+}
+
+.cursor {
+    &--pointer {
+        cursor: pointer;
     }
 }

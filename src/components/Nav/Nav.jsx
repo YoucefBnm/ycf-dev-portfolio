@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Logo } from '../../assets'
 import { navLinks } from '../../constants'
+import './Nav.scss'
 
 const Nav = () => {
   return (
@@ -18,6 +19,10 @@ const Nav = () => {
           </li>
         ))}
       </ul>
+
+      <div className="nav__toggle">
+        <span></span><span></span><span></span>
+      </div>
     </nav>
   )
 }

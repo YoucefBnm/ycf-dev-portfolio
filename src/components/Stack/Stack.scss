@@ -1,0 +1,21 @@
+.stack {
+    padding: 5rem 10rem;
+
+    &__text {
+        flex-basis: 42%;
+    }
+    &__tools {
+        flex-basis: 50%;
+    }
+
+    &__tool {
+        padding: .9rem 3rem;
+        border-radius: 5rem;
+        border: 1px solid var(--color-primary-2);
+        span {
+            display: inline-block;
+            line-height: .5;
+            color: var(--color-primary-2);
+        }
+    }
+}
