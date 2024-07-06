@@ -41,13 +41,11 @@ import ShadcnIcon from "./icons/shadcn-icon.svg";
 import SassIcon from "./icons/Sass.svg";
 import FigmaIcon from "./icons/Figma.svg";
 import GitIcon from "./icons/Git.svg";
-// import ContactBg from "./images/contact-bg.jpg?w=400&h=300&format=webp";
-import ContactBg from "./images/contact-bg.jpg";
 
-import ServiceFrontEndImage from "./images/services-frontend.jpg";
-import ServiceDesignImage from "./images/service-ux.jpg";
-import ServiceEcommerceImage from "./images/service-ecommerce.jpg";
-import ServiceResponsiveImage from "./images/service-responsive.jpg";
+import ServiceReact from "./images/service-react.png";
+import ServiceJs from "./images/service-js.png";
+import ServiceResponsive from "./images/service-responsive.png";
+import ServiceDesign from "./images/service-design.png";
 
 export {
   HeroVideo,
@@ -87,10 +85,9 @@ export {
   SassIcon,
   FigmaIcon,
   GitIcon,
-  ContactBg,
-  ServiceFrontEndImage,
-  ServiceDesignImage,
-  ServiceEcommerceImage,
-  ServiceResponsiveImage,
   ActifeetCategoryImage,
+  ServiceReact,
+  ServiceJs,
+  ServiceResponsive,
+  ServiceDesign,
 };

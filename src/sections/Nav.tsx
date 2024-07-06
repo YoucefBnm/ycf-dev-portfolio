@@ -1,7 +1,7 @@
 import Navigation from "@/components/Navigation";
+import { useToggleNav } from "@/hooks/useToggleNav";
 import Logo from "@assets/icons/logo.svg?react";
 import { motion } from "framer-motion";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 type NavToggleBtnProps = {
@@ -42,21 +42,22 @@ const NavToggleBtn = ({ isOpen, toggle }: NavToggleBtnProps) => {
 };
 
 const Nav = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
-
-  const toggleNav = () => setIsOpen((prevState) => !prevState);
-
-  const closeNav = () => setIsOpen(false);
-
+  const { isOpen, isHidden, toggleNav, closeNav, showHeader } = useToggleNav();
   return (
     <>
-      <header className="sticky mix-blend-difference px-default flex items-end justify-between top-0 w-full h-20 left-0 z-50">
+      <motion.header
+        className="sticky mix-blend-difference px-default flex items-end justify-between top-0 w-full h-20 left-0 z-50"
+        animate={isHidden ? { y: "-90%" } : { y: "0%" }}
+        whileHover={{ y: "0%" }}
+        onFocusCapture={showHeader}
+        transition={{ duration: 0.2 }}
+      >
         <Link to="/" className="block ">
           <Logo />
         </Link>
 
         <NavToggleBtn isOpen={isOpen} toggle={toggleNav} />
-      </header>
+      </motion.header>
 
       <Navigation closeNav={closeNav} isOpen={isOpen} />
     </>

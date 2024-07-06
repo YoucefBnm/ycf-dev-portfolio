@@ -1,15 +1,10 @@
 import { PropsWithChildren, createContext, useContext } from "react";
-import { Button } from "./ui/button";
-import { useNavigate } from "react-router-dom";
 import { cn } from "@/lib/utils";
 
 interface Content {
   id: string;
   title: string;
-  icon?: string;
   description: string;
-  route: string;
-  label?: string;
 }
 type CardContext = {
   content: Content;
@@ -75,20 +70,8 @@ const CardFooter = ({
   children,
   className,
 }: PropsWithChildren & { className?: string }) => {
-  const { content } = useCardContext();
-  const navigate = useNavigate();
-  const navigateToPage = () => navigate(content.route);
-
   return (
-    <div className={cn("mt-auto flex items-center justify-between", className)}>
-      <Button
-        variant={"link"}
-        className="capitalize text-primary-1 p-0"
-        onClick={navigateToPage}
-      >
-        {content.label || "learn more"}
-      </Button>
-
+    <div className={cn("mt-auto flex flex-wrap gap-2", className)}>
       {children}
     </div>
   );

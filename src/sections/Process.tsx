@@ -5,6 +5,8 @@ import { processContent } from "@/constants/data";
 import { useWindowSize } from "@uidotdev/usehooks";
 import { Card, CardBody, CardFooter, CardHeader } from "@/components/Card";
 import ContainerVelocity from "@/components/ContainerVelocity";
+import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Process = () => {
   const { scrollRef, scrollYProgress } = useScrollAnimation();
@@ -15,6 +17,8 @@ const Process = () => {
   const X = (range: [number, number], order: number) =>
     useTransform(scrollYProgress, range, [Number(width) * order, 0]);
 
+  const navigate = useNavigate();
+  const navigateToPage = (route: string) => () => navigate(route);
   return (
     <section
       ref={scrollRef}
@@ -49,7 +53,14 @@ const Process = () => {
                     </div>
                   </CardBody>
 
-                  <CardFooter>
+                  <CardFooter className="justify-between items-center">
+                    <Button
+                      variant={"link"}
+                      className="capitalize text-primary-1 p-0"
+                      onClick={navigateToPage(process.route)}
+                    >
+                      {process.label}
+                    </Button>
                     <h4 className="text-white">{index + 1}</h4>
                   </CardFooter>
                 </Card>

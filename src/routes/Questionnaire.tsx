@@ -21,6 +21,7 @@ import RouteTransition from "@/hoc/RouteTransition";
 import { HeroContainer, HeroContent } from "@/components/HeroContainer";
 import ContainerVelocity from "@/components/ContainerVelocity";
 import { useNavigate } from "react-router-dom";
+import { useToast } from "@/components/ui/use-toast";
 
 const formSchema = z.object({
   name: z.string().min(3).max(50),
@@ -37,6 +38,8 @@ const formSchema = z.object({
 
 const Questionnaire = () => {
   const [loading, setLoading] = useState<boolean>(false);
+
+  const { toast } = useToast();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -79,11 +82,19 @@ const Questionnaire = () => {
       .then(
         () => {
           setLoading(false);
-          alert("success");
+          toast({
+            title: "Thank you, I will reply soon",
+            description: "Your message has been sent.",
+            className: "border border-primary-1  bg-primary-900 bg-opacity-70",
+          });
         },
         (error) => {
           setLoading(false);
-          alert(error);
+          toast({
+            title: "Something went wrong !!",
+            description: `there was problem with your message.`,
+          });
+          console.log(error);
         }
       );
   }
@@ -92,7 +103,7 @@ const Questionnaire = () => {
   const navigateToBooking = () => navigate("/booking");
   return (
     <main className="">
-      <HeroContainer className="min-h-[70svh]">
+      <HeroContainer className="min-h-[70svh] place-content-center">
         <HeroContent className="flex flex-col gap-4 mb-4">
           <div className="relative mix-blend-difference place-content-end overflow-hidden col-span-12">
             <ContainerVelocity baseVelocity={3}>

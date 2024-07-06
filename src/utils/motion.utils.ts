@@ -57,3 +57,50 @@ export const customCursorVariants = {
     // filter: "blur(10px)",
   },
 };
+
+export const navListVariants = {
+  visible: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  hidden: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
+export const navItemVariants = {
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  hidden: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+
+export const navVariants = {
+  visible: {
+    clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+    display: "block",
+    transition: {
+      // type: "spring",
+      // stiffness: 20,
+      // restDelta: 2,
+    },
+  },
+  hidden: {
+    clipPath: "polygon(0% 0%, 100% 0%, 100% 0%, 0% 0%)",
+    display: "none",
+    transition: {
+      delay: 0.5,
+      type: "spring",
+      stiffness: 400,
+      damping: 40,
+    },
+  },
+};

@@ -11,11 +11,10 @@ import {
   ReactIcon,
   ReduxIcon,
   SassIcon,
-  ServiceDesignImage,
-  ServiceEcommerceImage,
-  ServiceFrontEndImage,
-  ServiceResponsiveIcon,
-  ServiceResponsiveImage,
+  ServiceReact,
+  ServiceJs,
+  ServiceResponsive,
+  ServiceDesign,
   ServiceUxIcon,
   ShadcnIcon,
   ShowcaseActifeetHero2Image,
@@ -36,7 +35,31 @@ import {
   WorkBizadvisorImage,
   WorkKatadysiImage,
   WorkVisiocraftImage,
+  ServiceResponsiveIcon,
 } from "@/assets";
+
+export const navLinks = [
+  {
+    id: "nav-link-home",
+    title: "HOME",
+    route: "/",
+  },
+  {
+    id: "nav-link-work",
+    title: "WORK",
+    route: "/portfolio",
+  },
+  {
+    id: "nav-link-quote",
+    title: "QUOTE",
+    route: "/questionnaire",
+  },
+  {
+    id: "nav-link-contact",
+    title: "CONTACT",
+    route: "/booking",
+  },
+];
 
 export const heroContent = {
   title: "youcef bnm frontend developer",
@@ -72,13 +95,6 @@ export const aboutContent = [
 
 export const socialProfiles = [
   {
-    id: "about-social-email",
-    link: "ssefbnm@gmail.com",
-    icon: SocialGmailIcon,
-    title: "gmail",
-    label: "mail address",
-  },
-  {
     id: "about-social-in",
     link: "https://www.linkedin.com/in/youcef-bnm-692392123/",
     icon: SocialLinkedinIcon,
@@ -98,6 +114,20 @@ export const socialProfiles = [
     title: "x",
     icon: SocialXIcon,
     label: "x profile",
+  },
+  {
+    id: "about-social-email",
+    link: "mailto:ssefbnm@gmail.com",
+    icon: SocialGmailIcon,
+    title: "ssefbnm@gmail.com",
+    label: "mail address",
+  },
+  {
+    id: "about-social-phone",
+    link: "tel:+213777915747",
+    icon: SocialGmailIcon,
+    title: "+213 777 915 747",
+    label: "phone number",
   },
 ];
 
@@ -150,7 +180,7 @@ export const processContent = [
       "This step involves detailed discussions to gather all necessary information and to align on the project objectives.",
     timing: "5-10 minute to complete",
     label: "Complete Questionnaire",
-    route: "/quaistionnaire",
+    route: "/questionnaire",
   },
   {
     id: "process-development",
@@ -166,25 +196,15 @@ export const processContent = [
 export const servicesContent = [
   {
     id: "service-react",
-    title: "React SPA",
+    title: "React Development",
     icon: ReactIcon,
     description:
       "Creating dynamic, high performance web applications using react, and leveraging its ecosystem and optimization tools.",
-    route: "/services",
-    imageUrl: ServiceFrontEndImage,
+    route: "/services#service-react",
+    imageUrl: ServiceReact,
     paragraph:
-      "Specializing in building dynamic, high-performance web applications using React. Ensuring seamless user experiences with interactive interfaces and efficient state management wheter its with redux or react context depending on state complexity.",
-  },
-  {
-    id: "service-responsive",
-    title: "responsive design",
-    icon: ServiceResponsiveIcon,
-    description:
-      "Ensuring that your website looks great and functions perfectly on all devices.",
-    route: "/services",
-    imageUrl: ServiceResponsiveImage,
-    paragraph:
-      "Ensuring that your website looks great and functions perfectly on all devices, from desktops to mobile phones, is a key priority. I use flexible grid layouts, flexible images, and media queries to create responsive designs that provide an optimal viewing experience for users on any device.",
+      "Specializing in building dynamic, high-performance web applications using React. Ensuring seamless user experiences with interactive interfaces and efficient state management whether its with redux or react context depending on state complexity.",
+    stack: ["react", "redux", "context", "api", "css", "sass", "tailwind"],
   },
   {
     id: "service-html-css-js",
@@ -192,10 +212,23 @@ export const servicesContent = [
     icon: JavascriptIcon,
     description:
       "Using vanilla js and plain html and css to create robust and responsive websites.",
-    route: "/services",
-    imageUrl: ServiceEcommerceImage,
+    route: "/services#service-html-css-js",
+    imageUrl: ServiceJs,
     paragraph:
       "Creating robust and responsive websites with a strong foundation in HTML, CSS, and JavaScript. Focused on clean code, cross-browser compatibility, and best practices in web development.",
+    stack: ["javascript", "html", "css", "sass", "tailwind"],
+  },
+  {
+    id: "service-responsive",
+    title: "responsive design",
+    icon: ServiceResponsiveIcon,
+    description:
+      "Ensuring that your website looks great and functions perfectly on all devices.",
+    route: "/services#service-responsive",
+    imageUrl: ServiceResponsive,
+    paragraph:
+      "Ensuring that your website looks great and functions perfectly on all devices, from desktops to mobile phones, is a key priority. I use flexible grid layouts, flexible images, and media queries to create responsive designs that provide an optimal viewing experience for users on any device.",
+    stack: ["figma", "css", "sass", "tailwind"],
   },
   {
     id: "service-design-conversion",
@@ -203,10 +236,11 @@ export const servicesContent = [
     icon: ServiceUxIcon,
     description:
       "Transforming design mockups into fully functional, responsive websites. Ensuring pixel-perfect implementation and preserving design integrity across all devices.",
-    route: "/services",
-    imageUrl: ServiceDesignImage,
+    route: "/services#service-design-conversion",
+    imageUrl: ServiceDesign,
     paragraph:
-      "Transforming design mockups into fully functional, responsive websites. Ensuring pixel-perfect implementation and preserving design integrity across all devices, wheter with react or plain html/css/javascript.",
+      "Transforming design mockups into fully functional, responsive websites. Ensuring pixel-perfect implementation and preserving design integrity across all devices, whether with react or plain html/css/javascript.",
+    stack: ["figma", "ui/ux", "code"],
   },
 ];
 

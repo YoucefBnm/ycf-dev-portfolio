@@ -7,8 +7,8 @@ import { motion, useTransform } from "framer-motion";
 const Services = () => {
   const { scrollRef, scrollYProgress } = useScrollAnimation();
 
-  const rotate = useTransform(scrollYProgress, [0, 0.45], [2, 0]);
-  const rotateReverse = useTransform(scrollYProgress, [0, 0.45], [-2, 0]);
+  const rotate = useTransform(scrollYProgress, [0, 0.5], [-2, 0]);
+  const rotateReverse = useTransform(scrollYProgress, [0, 0.5], [2, 0]);
 
   return (
     <section ref={scrollRef} className="py-12 relative min-h-[150vh]">
@@ -53,7 +53,16 @@ const Services = () => {
 
                 <CardBody />
 
-                <CardFooter />
+                <CardFooter>
+                  {service.stack.map((stak) => (
+                    <div
+                      className="tag text-primary-1"
+                      key={`${service.id}-${stak}`}
+                    >
+                      {stak}
+                    </div>
+                  ))}
+                </CardFooter>
               </Card>
             </motion.div>
           );
