@@ -13,9 +13,13 @@ import {
 import ContainerVelocity from "@/components/ContainerVelocity";
 import { Button } from "@/components/ui/button";
 import RouteTransition from "@/hoc/RouteTransition";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const { title, videoUrl, description } = heroContent;
+  const navigate = useNavigate();
+  const navigateToBooking = () => navigate("/booking");
+
   return (
     <>
       <HeroContainer className="h-[350vh]">
@@ -27,7 +31,12 @@ const Home = () => {
           </div>
 
           <div className="px-default col-span-12 flex justify-between gap-4 items-end">
-            <Button variant={"secondary"} className="rounded-full" size={"lg"}>
+            <Button
+              onClick={navigateToBooking}
+              variant={"secondary"}
+              className="rounded-full"
+              size={"lg"}
+            >
               GET STARTED
             </Button>
             <p className="basis-1/2 md:basis-1/4 text-xs md:text-sm text-neutral-300">

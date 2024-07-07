@@ -290,7 +290,7 @@ export const portfolioProjects: Record<string, Project> = {
       "Intuitive navigation and user-friendly interface developed with React.",
       "Emphasis on visual storytelling to highlight the agency's projects and expertise.",
     ],
-    route: "/",
+    route: "https://visiocraft.netlify.app",
     label: "Visit Website",
     videoUrl: VisiocraftVideo,
   },
