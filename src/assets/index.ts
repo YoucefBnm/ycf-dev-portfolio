@@ -1,3 +1,5 @@
+// import CategoryRunningImage from "./images/category-run.jpg?w=540&h=675&format=webp&meta&imagetools";
+
 import HeroVideo from "./videos/0606.mp4";
 import ActifeetVideo from "./videos/actifeet-video.mp4";
 import VisiocraftVideo from "./videos/visiocraft-video.mp4";
@@ -13,20 +15,19 @@ import SocialGmailIcon from "./icons/icon-gmail.svg";
 import TimeIcon from "./icons/icon-time.svg";
 import Logo from "./icons/logo.svg";
 
-import ShowcaseActifeetHeroImage from "./images/actifeet-hero.jpg";
-import ShowcaseActifeetHero2Image from "./images/actifeet-category.jpg";
+import ShowcaseActifeetHeroImage from "./images/actifeet-hero.jpg?w=460&h=287.94&format=webp&meta&imagetools";
+import ShowcaseActifeetHero2Image from "./images/actifeet-category.jpg?w=460&h=287.94&format=webp&meta&imagetools";
 import ActifeetCategoryImage from "./images/actifeet-category.jpg";
+import ShowcaseKatadysiHeroImage from "./images/katadysi-hero.jpg?w=460&h=287.94&format=webp&meta&imagetools";
+import ShowcaseKatadysiIntroImage from "./images/katadysi-intro.jpg?w=460&h=287.94&format=webp&meta&imagetools";
+import ShowcaseKatadysiCtaImage from "./images/katadysi-cta.jpg?w=460&h=287.94&format=webp&meta&imagetools";
+import ShowcaseBizadvisorHeroImage from "./images/bizadvisor-hero-2.jpg?w=460&h=287.94&format=webp&meta&imagetools";
+import ShowcaseBizadvisorHero2Image from "./images/bizadvisor-hero.jpg?w=460&h=287.94&format=webp&meta&imagetools";
 
-import ShowcaseKatadysiHeroImage from "./images/katadysi-hero.jpg";
-import ShowcaseKatadysiIntroImage from "./images/katadysi-intro.jpg";
-import ShowcaseKatadysiCtaImage from "./images/katadysi-cta.jpg";
-import ShowcaseBizadvisorHeroImage from "./images/bizadvisor-hero-2.jpg";
-import ShowcaseBizadvisorHero2Image from "./images/bizadvisor-hero.jpg";
-
-import WorkActifeetImage from "./images/work-actifeet.jpg";
-import WorkVisiocraftImage from "./images/work-visiocraft.jpg";
-import WorkBizadvisorImage from "./images/work-bizadvisor.jpg";
-import WorkKatadysiImage from "./images/work-katadisy.jpg";
+import WorkActifeetImage from "./images/work-actifeet.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import WorkVisiocraftImage from "./images/work-visiocraft.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import WorkBizadvisorImage from "./images/work-bizadvisor.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import WorkKatadysiImage from "./images/work-katadisy.jpg?w=1440&h=936&format=webp&meta&imagetools";
 
 import JavascriptIcon from "./icons/javascript.svg";
 import HtmlIcon from "./icons/HTML5.svg";

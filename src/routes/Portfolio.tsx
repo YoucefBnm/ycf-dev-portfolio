@@ -32,12 +32,12 @@ const Portfolio = () => {
                 rounded-xl bg-opacity-40 bg-zinc-800 border border-zinc-800 col-span-6 
               `}
             >
-              <CardBody>
-                <Link to={project.id} className="overflow-hidden rounded-xl">
+              <CardBody className="">
+                <Link to={project.id} className="overflow-hidden ">
                   <motion.img
                     whileHover={{ scale: 1.2 }}
                     transition={{ type: "spring", damping: 50 }}
-                    className="size-full align-middle rounded-xl"
+                    className="size-full align-middle"
                     src={project.imageUrl}
                     width={2000}
                     height={1300}
@@ -46,7 +46,7 @@ const Portfolio = () => {
                 </Link>
               </CardBody>
 
-              <CardFooter className="flex-wrap gap-y-4">
+              <CardFooter className="flex-wrap gap-y-4 px-6 py-8">
                 <div className="flex flex-wrap gap-4">
                   {project.services.map((service) => (
                     <div key={service} className="tag">
