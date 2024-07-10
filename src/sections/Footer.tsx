@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <footer className="py-12 border-t border-zinc-700  ">
       <div className="w-full overflow-hidden text-zinc-600">
-        <ContainerVelocity baseVelocity={-10}>
-          <h1 className="md:text-9xl">YOUCEF BENMESSABIH &nbsp;</h1>
+        <ContainerVelocity baseVelocity={3}>
+          <h1>YOUCEF BENMESSABIH</h1>
         </ContainerVelocity>
       </div>
 

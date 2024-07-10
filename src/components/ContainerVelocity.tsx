@@ -73,10 +73,10 @@ function ContainerVelocity({
       )}
     >
       <motion.div className="flex whitespace-nowrap flex-nowrap" style={{ x }}>
-        <div>{children} </div>
-        <div>{children} </div>
-        <div>{children} </div>
-        <div>{children} </div>
+        <div>{children}</div>&nbsp;
+        <div>{children}</div>&nbsp;
+        <div>{children}</div>&nbsp;
+        <div>{children}</div>&nbsp;
       </motion.div>
     </div>
   );

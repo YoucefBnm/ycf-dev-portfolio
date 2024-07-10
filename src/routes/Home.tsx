@@ -22,24 +22,23 @@ const Home = () => {
 
   return (
     <>
-      <HeroContainer className="h-[350vh]">
-        <HeroContent className="flex flex-col gap-4 mb-4">
-          <div className="relative mix-blend-difference place-content-end overflow-hidden col-span-12">
+      <HeroContainer>
+        <HeroContent className="relative flex flex-col gap-4 mb-4">
+          <div className="relative my-6 mix-blend-difference place-content-end overflow-hidden col-span-12">
             <ContainerVelocity baseVelocity={3}>
-              <h1 className="md:text-9xl uppercase">{title} &nbsp;</h1>
+              <h1>{title.toUpperCase()}</h1>
             </ContainerVelocity>
           </div>
 
-          <div className="px-default col-span-12 flex justify-between gap-4 items-end">
+          <div className="px-default mb-8 flex justify-between gap-4 items-end">
             <Button
               onClick={navigateToBooking}
               variant={"secondary"}
-              className="rounded-full"
-              size={"lg"}
+              className="rounded-full text-xs"
             >
               GET STARTED
             </Button>
-            <p className="basis-1/2 md:basis-1/4 text-xs md:text-sm text-neutral-300">
+            <p className="basis-1/2 md:basis-1/4 text-xs md:text-sm text-neutral-400">
               {description}
             </p>
           </div>

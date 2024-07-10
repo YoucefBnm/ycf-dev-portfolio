@@ -83,6 +83,19 @@ h3 {
     .px-default {
         @apply px-6 md:px-10 lg:px-16
     }
+
+    .mx-default {
+        @apply mx-6 md:mx-10 lg:mx-16
+    }
+
+    .ml-default {
+        @apply ml-6 md:ml-10 lg:ml-16
+    }
+
+    .mr-default {
+        @apply mr-6 md:mr-10 lg:mr-16
+    }
+
 }
 
 .showcase-figure:nth-of-type(1),

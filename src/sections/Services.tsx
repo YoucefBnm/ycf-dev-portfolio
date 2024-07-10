@@ -15,7 +15,7 @@ const Services = () => {
       <ContainerVelocity className="mb-12 text-zinc-700" baseVelocity={6}>
         <h1>SERVICES SERVICES &nbsp;</h1>
       </ContainerVelocity>
-      <div className="px-default sticky inset-0 w-full lg:w-11/12 mx-auto gap-4 grid grid-cols-12">
+      <div className="px-default w-full lg:w-11/12 mx-auto gap-4 grid grid-cols-12">
         {servicesContent.map((service, index) => {
           return (
             <motion.div
@@ -39,7 +39,7 @@ const Services = () => {
                   index === 0 || index === servicesContent.length - 1
                     ? " bg-zinc-800"
                     : "bg-none"
-                } bg-opacity-50 border border-zinc-700`}
+                } bg-opacity-50 border border-zinc-800`}
               >
                 <CardHeader className="capitalize max-w-[7ch]">
                   <img

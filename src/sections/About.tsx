@@ -8,7 +8,7 @@ import { aboutContent } from "@/constants/data";
 
 const About = () => {
   return (
-    <section className="px-default py-16">
+    <section className="px-default place-content-center">
       <ScrollTabs
         className="flex flex-col justify-center"
         arrayLength={aboutContent.length}

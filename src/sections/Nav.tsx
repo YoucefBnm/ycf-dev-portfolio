@@ -12,7 +12,7 @@ type NavToggleBtnProps = {
 const NavToggleBtn = ({ isOpen, toggle }: NavToggleBtnProps) => {
   return (
     <button
-      className="  size-14 bg-zinc-700 bg-opacity-40 relative flex flex-wrap items-center justify-end pr-4 rounded-full"
+      className="size-14 bg-zinc-700 bg-opacity-40 transition-colors hover:bg-opacity-100 relative flex flex-wrap items-center justify-end pr-4 rounded-full"
       onClick={toggle}
     >
       <span className=" sr-only">open navigation</span>
@@ -46,7 +46,7 @@ const Nav = () => {
   return (
     <>
       <motion.header
-        className="sticky mix-blend-difference px-default flex items-end justify-between top-0 w-full h-20 left-0 z-50"
+        className="sticky mix-blend-difference px-default flex items-end justify-between top-0 w-full h-16 left-0 z-50"
         animate={isHidden ? { y: "-90%" } : { y: "0%" }}
         whileHover={{ y: "0%" }}
         onFocusCapture={showHeader}

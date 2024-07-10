@@ -27,7 +27,10 @@ const HeroContainer = ({ className, children }: HeroContainerProps) => {
   const { scrollRef, scrollYProgress } = useScrollAnimation();
   return (
     <HeroContainerContext.Provider value={{ scrollYProgress }}>
-      <section ref={scrollRef} className={cn("relative", className)}>
+      <section
+        ref={scrollRef}
+        className={cn("relative has-[video]:h-[350vh]", className)}
+      >
         {children}
       </section>
     </HeroContainerContext.Provider>
@@ -38,20 +41,15 @@ type HeroContentProps = PropsWithChildren & {
 };
 
 const HeroContent = ({ className, children }: HeroContentProps) => {
-  const { scrollYProgress } = useHeroContainerContext();
-  const scaleY = useTransform(scrollYProgress, [0, 0.1], [1, 0]);
-
   const { revealRef, isInView } = useRevealAnimation();
   return (
     <motion.div
-      layout
       ref={revealRef}
-      style={{ scaleY }}
       variants={transformVariants()}
       initial="hidden"
       transition={{ delay: 1.1 }}
       animate={isInView ? "visible" : "hidden"}
-      className={cn(className)}
+      className={cn("mt-6", className)}
     >
       {children}
     </motion.div>

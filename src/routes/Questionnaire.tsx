@@ -107,9 +107,7 @@ const Questionnaire = () => {
         <HeroContent className="flex flex-col gap-4 mb-4">
           <div className="relative mix-blend-difference place-content-end overflow-hidden col-span-12">
             <ContainerVelocity baseVelocity={3}>
-              <h1 className="md:text-9xl uppercase">
-                {questionnaireContent.title} &nbsp;
-              </h1>
+              <h1>{questionnaireContent.title.toUpperCase()}</h1>
             </ContainerVelocity>
           </div>
 
@@ -117,8 +115,7 @@ const Questionnaire = () => {
             <Button
               onClick={navigateToBooking}
               variant={"secondary"}
-              className="rounded-full"
-              size={"lg"}
+              className="rounded-full text-xs bg-primary-1"
             >
               OR BOOK A CALL
             </Button>
