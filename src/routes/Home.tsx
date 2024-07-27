@@ -7,45 +7,43 @@ import Work from "@/sections/Work";
 import { heroContent } from "@/constants/data";
 import {
   HeroContainer,
-  HeroContent,
+  HeroCta,
+  HeroDescription,
+  HeroHeading,
   HeroVideo,
+  HeroWrap,
 } from "@/components/HeroContainer";
-import ContainerVelocity from "@/components/ContainerVelocity";
-import { Button } from "@/components/ui/button";
 import RouteTransition from "@/hoc/RouteTransition";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
 
 const Home = () => {
-  const { title, videoUrl, description } = heroContent;
   const navigate = useNavigate();
   const navigateToBooking = () => navigate("/booking");
 
   return (
     <>
-      <HeroContainer>
-        <HeroContent className="relative flex flex-col gap-4 mb-4">
-          <div className="relative my-6 mix-blend-difference place-content-end overflow-hidden col-span-12">
-            <ContainerVelocity baseVelocity={3}>
-              <h1>{title.toUpperCase()}</h1>
-            </ContainerVelocity>
-          </div>
+      <HeroContainer content={heroContent}>
+        <HeroWrap>
+          <HeroHeading />
 
-          <div className="px-default mb-8 flex justify-between gap-4 items-end">
-            <Button
-              onClick={navigateToBooking}
-              variant={"secondary"}
-              className="rounded-full text-xs"
-            >
-              GET STARTED
-            </Button>
-            <p className="basis-1/2 md:basis-1/4 text-xs md:text-sm text-neutral-400">
-              {description}
-            </p>
+          <div className="flex mb-8 px-default justify-between items-end">
+            <HeroDescription />
+            <HeroCta>
+              <Button
+                onClick={navigateToBooking}
+                variant={"secondary"}
+                size={"sm"}
+                className="bg-primary-1 rounded-full text-xs"
+              >
+                GET STARTED
+              </Button>
+            </HeroCta>
           </div>
-        </HeroContent>
-        <HeroVideo videoUrl={videoUrl} />
+        </HeroWrap>
+        <HeroVideo />
       </HeroContainer>
-      <HeroContainer />
+      
       <About />
       <Work />
       <Services />

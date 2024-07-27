@@ -55,7 +55,7 @@
 
 body {
     /* @apply bg-zinc-800 text-neutral-200 font-body font-normal leading-normal text-xl */
-    @apply font-body font-normal leading-normal bg-zinc-900 text-neutral-200
+    @apply font-body font-normal leading-normal bg-neutral-900 text-white
 }
 
 h1,
@@ -139,5 +139,5 @@ h3 {
 }
 
 .tag {
-    @apply bg-black bg-opacity-5 text-xs border border-current rounded-full px-3 py-1
+    @apply bg-white text-neutral-900 text-xs capitalize rounded-full px-3 py-1
 }

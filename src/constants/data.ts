@@ -11,19 +11,8 @@ import {
   ReactIcon,
   ReduxIcon,
   SassIcon,
-  ServiceReact,
-  ServiceJs,
-  ServiceResponsive,
-  ServiceDesign,
   ServiceUxIcon,
   ShadcnIcon,
-  ShowcaseActifeetHero2Image,
-  ShowcaseActifeetHeroImage,
-  ShowcaseBizadvisorHero2Image,
-  ShowcaseBizadvisorHeroImage,
-  ShowcaseKatadysiCtaImage,
-  ShowcaseKatadysiHeroImage,
-  ShowcaseKatadysiIntroImage,
   SocialGithubIcon,
   SocialGmailIcon,
   SocialLinkedinIcon,
@@ -36,6 +25,13 @@ import {
   WorkKatadysiImage,
   WorkVisiocraftImage,
   ServiceResponsiveIcon,
+  ShowcaseGreenTradeHeroImage,
+  ShowcaseKatadysiHeroImage,
+  ShowcaseGreenTradeFeatureImage,
+  ShowcaseVisiocraftHeroImage,
+  ShowcaseKatadysiCtaImage,
+  ShowcaseActifeetHeroImage,
+  ShowcaseActifeetHikingImage,
 } from "@/assets";
 
 export const navLinks = [
@@ -62,7 +58,7 @@ export const navLinks = [
 ];
 
 export const heroContent = {
-  title: "youcef bnm frontend developer",
+  heading: "youcef bnm frontend developer",
   description:
     "Crafting seamless user experiences with modern web technologies, Creating visually appealing websites. With a focus on clean code and responsive design.",
   videoUrl: HeroVideo,
@@ -89,7 +85,7 @@ export const aboutContent = [
   {
     title: "mindset",
     description:
-      "With good eye for design, I create interactive animations and transitions powerd by framer motion.",
+      "Focusing on performance optimization, from converting into modern webp images, to limiting API calls and minifying code, Having a good eye for design, I create interactive animations and transitions powerd by framer motion and CSS animations.",
   },
 ];
 
@@ -133,33 +129,40 @@ export const socialProfiles = [
 
 export const showcaseContent = [
   {
-    id: "cta-actifeet-category-image",
-    imageUrl: ShowcaseActifeetHero2Image,
+    id: "showcase-greentrade-hero-image",
+    imageUrl: ShowcaseGreenTradeHeroImage,
+    title: "Green Trade",
   },
   {
-    id: "cta-actifeet-hero-image",
-    imageUrl: ShowcaseActifeetHeroImage,
+    id: "showcase-katadysi-hero-image", 
+    imageUrl: ShowcaseKatadysiHeroImage,
+    title: "Katadysi",
   },
   {
-    id: "cta-bizadvisor-hero-image",
-    imageUrl: ShowcaseBizadvisorHeroImage,
+    id: "showcase-greentrade-features-image", 
+    imageUrl: ShowcaseGreenTradeFeatureImage,
+    title: "Green Trade",
   },
 
   {
-    id: "cta-bizadvisor-hero-2-image",
-    imageUrl: ShowcaseBizadvisorHero2Image,
+    id: "showcase-visiocraft-hero-image",
+    imageUrl: ShowcaseVisiocraftHeroImage,
+    title: "Visiocraft",
   },
   {
-    id: "cta-katadysi-cta-image",
+    id: "showcase-katadysi-cta-image",
     imageUrl: ShowcaseKatadysiCtaImage,
+    title: "Katadysi",
   },
   {
-    id: "cta-katadysi-intro-image",
-    imageUrl: ShowcaseKatadysiIntroImage,
+    id: "showcase-actifeet-hero-image",
+    imageUrl: ShowcaseActifeetHeroImage,
+    title: "Actifeet",
   },
   {
-    id: "cta-katadysi-hero-image",
-    imageUrl: ShowcaseKatadysiHeroImage,
+    id: "showcase-actifeet-hiking-image",
+    imageUrl: ShowcaseActifeetHikingImage,
+    title: "Actifeet",
   },
 ];
 
@@ -201,7 +204,6 @@ export const servicesContent = [
     description:
       "Creating dynamic, high performance web applications using react, and leveraging its ecosystem and optimization tools.",
     route: "/services#service-react",
-    imageUrl: ServiceReact,
     paragraph:
       "Specializing in building dynamic, high-performance web applications using React. Ensuring seamless user experiences with interactive interfaces and efficient state management whether its with redux or react context depending on state complexity.",
     stack: ["react", "redux", "context", "api", "css", "sass", "tailwind"],
@@ -213,7 +215,6 @@ export const servicesContent = [
     description:
       "Using vanilla js and plain html and css to create robust and responsive websites.",
     route: "/services#service-html-css-js",
-    imageUrl: ServiceJs,
     paragraph:
       "Creating robust and responsive websites with a strong foundation in HTML, CSS, and JavaScript. Focused on clean code, cross-browser compatibility, and best practices in web development.",
     stack: ["javascript", "html", "css", "sass", "tailwind"],
@@ -225,7 +226,6 @@ export const servicesContent = [
     description:
       "Ensuring that your website looks great and functions perfectly on all devices.",
     route: "/services#service-responsive",
-    imageUrl: ServiceResponsive,
     paragraph:
       "Ensuring that your website looks great and functions perfectly on all devices, from desktops to mobile phones, is a key priority. I use flexible grid layouts, flexible images, and media queries to create responsive designs that provide an optimal viewing experience for users on any device.",
     stack: ["figma", "css", "sass", "tailwind"],
@@ -237,7 +237,6 @@ export const servicesContent = [
     description:
       "Transforming design mockups into fully functional, responsive websites. Ensuring pixel-perfect implementation and preserving design integrity across all devices.",
     route: "/services#service-design-conversion",
-    imageUrl: ServiceDesign,
     paragraph:
       "Transforming design mockups into fully functional, responsive websites. Ensuring pixel-perfect implementation and preserving design integrity across all devices, whether with react or plain html/css/javascript.",
     stack: ["figma", "ui/ux", "code"],
@@ -246,8 +245,8 @@ export const servicesContent = [
 
 export interface Project {
   id: string;
+  heading: string;
   title: string;
-  description: string;
   imageUrl: string;
   profile: string;
   services: string[];
@@ -256,12 +255,13 @@ export interface Project {
   route: string;
   label: string;
   videoUrl?: string;
+  functionality: string[];
 }
 export const portfolioProjects: Record<string, Project> = {
   "portfolio-project-actifeet": {
     id: "portfolio-project-actifeet",
-    title: "Actifeet Ecommerce",
-    description: "Ecommerce store for athletic shoes",
+    heading: "Actifeet Ecommerce",
+    title: "Ecommerce store for athletic shoes",
     imageUrl: WorkActifeetImage,
     profile:
       "Actifeet is a cutting-edge ecommerce platform dedicated to athletic shoes. The site offers a smooth and engaging shopping experience with its dynamic product displays and seamless navigation.",
@@ -273,13 +273,19 @@ export const portfolioProjects: Record<string, Project> = {
       "Responsive and visually appealing layouts designed with Tailwind CSS.",
       "Interactive animations and transitions powered by Framer Motion.",
     ],
-    route: "/",
+    functionality: [
+      "Responsive Design",
+      "User Authentication (firebase auth)",
+      "Product Catalog Management",
+      "Payment Integration (stripe API)",
+    ],
+    route: "https://actifeet.netlify.app/",
     label: "Visit Website",
   },
   "portfolio-project-visiocraft": {
     id: "portfolio-project-visiocraft",
-    title: "Visiocraft Design Studio",
-    description: "Web design Studio website",
+    heading: "Visiocraft Design Studio",
+    title: "Web design Studio website",
     imageUrl: WorkVisiocraftImage,
     profile:
       "Visiocraft is a sleek and modern website for a design agency, showcasing their portfolio, services, and creative team. The site is designed to reflect the agency's commitment to innovation and high-quality design.",
@@ -290,14 +296,20 @@ export const portfolioProjects: Record<string, Project> = {
       "Intuitive navigation and user-friendly interface developed with React.",
       "Emphasis on visual storytelling to highlight the agency's projects and expertise.",
     ],
+    functionality: [
+      "Design Focused with web animations with framer motion",
+      "Contact Form and booking system",
+      "Responsive Design",
+      "Pricing Calculation",
+    ],
     route: "https://visiocraft.netlify.app",
     label: "Visit Website",
     videoUrl: VisiocraftVideo,
   },
   "portfolio-project-bizadvisor": {
     id: "portfolio-project-bizadvisor",
-    title: "BizAdvisor Consulting Agency",
-    description: "Consulting agency landing page",
+    heading: "BizAdvisor Consulting Agency",
+    title: "Consulting agency landing page",
     imageUrl: WorkBizadvisorImage,
     profile:
       "BizAdvisor is a comprehensive platform designed for a B2B consulting agency. This project demonstrates my proficiency in creating professional and business-oriented web applications using fundamental web technologies.",
@@ -308,14 +320,18 @@ export const portfolioProjects: Record<string, Project> = {
       "Efficient and clean user interface.",
       "Enhanced accessibility for business clients.",
     ],
-    route: "/",
+    functionality: [
+      "Design Focused with web animations powered by framer motion",
+      "Responsive Design",
+    ],
+    route: "https://visiocraft.netlify.app/",
     label: "Visit Website",
     // videoUrl: "",
   },
   "portfolio-project-katadysi": {
     id: "portfolio-project-katadysi",
-    title: "Katadysi Travel Agency",
-    description: "Travel agency Website",
+    heading: "Katadysi Travel Agency",
+    title: "Travel agency Website",
     imageUrl: WorkKatadysiImage,
     profile:
       "Katadysi is a vibrant and engaging website created for a travel agency. This project highlights my ability to use Webflow to design and implement visually appealing and highly functional travel websites.",
@@ -325,6 +341,10 @@ export const portfolioProjects: Record<string, Project> = {
       "Visually stunning and user-friendly design.",
       "Seamless navigation and immersive user experience.",
       "Detailed display of travel packages and destinations.",
+    ],
+    functionality: [
+      "Design Focused with web animations powered by GSAP",
+      "Responsive Design",
     ],
     route: "/",
     label: "Visit Website",

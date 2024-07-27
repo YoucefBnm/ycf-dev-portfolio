@@ -19,7 +19,7 @@ const About = () => {
             className="flex flex-col gap-4 md:flex-row md:justify-between md:items-center"
           >
             <ScrollTabTrigger index={index} className="uppercase basis-1/2">
-              <h1>{content.title}</h1>
+              <h2 className="text-primary-1">{content.title}</h2>
             </ScrollTabTrigger>
 
             <ScrollTabContent index={index} className="basis-1/3">

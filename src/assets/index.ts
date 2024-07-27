@@ -1,9 +1,9 @@
-// import CategoryRunningImage from "./images/category-run.jpg?w=540&h=675&format=webp&meta&imagetools";
-
+// videos
 import HeroVideo from "./videos/0606.mp4";
 import ActifeetVideo from "./videos/actifeet-video.mp4";
 import VisiocraftVideo from "./videos/visiocraft-video.mp4";
 
+// icons
 import ServiceEcommerceIcon from "./icons/icon-ecommerce.svg";
 import ServiceFrontendIcon from "./icons/icon-frontend.svg";
 import ServiceUxIcon from "./icons/icon-ux.svg";
@@ -14,21 +14,6 @@ import SocialGithubIcon from "./icons/icon-github.svg";
 import SocialGmailIcon from "./icons/icon-gmail.svg";
 import TimeIcon from "./icons/icon-time.svg";
 import Logo from "./icons/logo.svg";
-
-import ShowcaseActifeetHeroImage from "./images/actifeet-hero.jpg?w=460&h=287.94&format=webp&meta&imagetools";
-import ShowcaseActifeetHero2Image from "./images/actifeet-category.jpg?w=460&h=287.94&format=webp&meta&imagetools";
-import ActifeetCategoryImage from "./images/actifeet-category.jpg";
-import ShowcaseKatadysiHeroImage from "./images/katadysi-hero.jpg?w=460&h=287.94&format=webp&meta&imagetools";
-import ShowcaseKatadysiIntroImage from "./images/katadysi-intro.jpg?w=460&h=287.94&format=webp&meta&imagetools";
-import ShowcaseKatadysiCtaImage from "./images/katadysi-cta.jpg?w=460&h=287.94&format=webp&meta&imagetools";
-import ShowcaseBizadvisorHeroImage from "./images/bizadvisor-hero-2.jpg?w=460&h=287.94&format=webp&meta&imagetools";
-import ShowcaseBizadvisorHero2Image from "./images/bizadvisor-hero.jpg?w=460&h=287.94&format=webp&meta&imagetools";
-
-import WorkActifeetImage from "./images/work-actifeet.jpg?w=1440&h=936&format=webp&meta&imagetools";
-import WorkVisiocraftImage from "./images/work-visiocraft.jpg?w=1440&h=936&format=webp&meta&imagetools";
-import WorkBizadvisorImage from "./images/work-bizadvisor.jpg?w=1440&h=936&format=webp&meta&imagetools";
-import WorkKatadysiImage from "./images/work-katadisy.jpg?w=1440&h=936&format=webp&meta&imagetools";
-
 import JavascriptIcon from "./icons/javascript.svg";
 import HtmlIcon from "./icons/HTML5.svg";
 import CssIcon from "./icons/CSS3.svg";
@@ -43,10 +28,18 @@ import SassIcon from "./icons/Sass.svg";
 import FigmaIcon from "./icons/Figma.svg";
 import GitIcon from "./icons/Git.svg";
 
-import ServiceReact from "./images/service-react.png";
-import ServiceJs from "./images/service-js.png";
-import ServiceResponsive from "./images/service-responsive.png";
-import ServiceDesign from "./images/service-design.png";
+// images
+import WorkActifeetImage from "./images/work-actifeet.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import WorkVisiocraftImage from "./images/work-visiocraft.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import WorkBizadvisorImage from "./images/work-bizadvisor.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import WorkKatadysiImage from "./images/work-katadisy.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import ShowcaseGreenTradeHeroImage from "./images/showcase-greentrade-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
+import ShowcaseKatadysiHeroImage from "./images/showcase-katadysi-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
+import ShowcaseGreenTradeFeatureImage from "./images/showcase-greentrade-features.jpg?w=480&h=312&format=webp&meta&imagetools"
+import ShowcaseVisiocraftHeroImage from "./images/showcase-visiocraft-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
+import ShowcaseKatadysiCtaImage from "./images/showcase-katadysi-cta.jpg?w=480&h=312&format=webp&meta&imagetools"
+import ShowcaseActifeetHeroImage from "./images/showcase-actifeet-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
+import ShowcaseActifeetHikingImage from "./images/showcase-actifeet-hiking.jpg?w=480&h=312&format=webp&meta&imagetools"
 
 export {
   HeroVideo,
@@ -62,13 +55,6 @@ export {
   SocialGmailIcon,
   TimeIcon,
   Logo,
-  ShowcaseActifeetHeroImage,
-  ShowcaseActifeetHero2Image,
-  ShowcaseKatadysiHeroImage,
-  ShowcaseKatadysiIntroImage,
-  ShowcaseKatadysiCtaImage,
-  ShowcaseBizadvisorHeroImage,
-  ShowcaseBizadvisorHero2Image,
   WorkActifeetImage,
   WorkVisiocraftImage,
   WorkBizadvisorImage,
@@ -86,9 +72,11 @@ export {
   SassIcon,
   FigmaIcon,
   GitIcon,
-  ActifeetCategoryImage,
-  ServiceReact,
-  ServiceJs,
-  ServiceResponsive,
-  ServiceDesign,
+  ShowcaseGreenTradeHeroImage,
+  ShowcaseKatadysiHeroImage,
+  ShowcaseGreenTradeFeatureImage,
+  ShowcaseVisiocraftHeroImage,
+  ShowcaseActifeetHeroImage,
+  ShowcaseActifeetHikingImage,
+  ShowcaseKatadysiCtaImage,
 };

@@ -1,16 +1,25 @@
-import { useRevealAnimation } from "@/hooks/useRevealAnimation";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { cn } from "@/lib/utils";
-import { transformVariants } from "@/utils/motion.utils";
 import { motion, MotionValue, useTransform } from "framer-motion";
-import { PropsWithChildren, createContext, useContext } from "react";
+import { createContext, PropsWithChildren, useContext } from "react";
+import ContainerVelocity from "./ContainerVelocity";
 
-type HeroContainerContentValue = {
+type HeroContent = {
+  heading: string;
+  title?: string;
+  description?: string;
+  videoUrl?: string
+}
+type HeroContainerContextValue = {
   scrollYProgress: MotionValue<number>;
-};
-const HeroContainerContext = createContext<
-  HeroContainerContentValue | undefined
->(undefined);
+  content: HeroContent;
+}
+type HeroContainerProps = PropsWithChildren & {
+  className?: string;
+  content: HeroContent;
+}
+
+const HeroContainerContext = createContext<HeroContainerContextValue | undefined>(undefined);
 function useHeroContainerContext() {
   const context = useContext(HeroContainerContext);
 
@@ -20,47 +29,70 @@ function useHeroContainerContext() {
 
   return context;
 }
-type HeroContainerProps = PropsWithChildren & {
-  className?: string;
-};
-const HeroContainer = ({ className, children }: HeroContainerProps) => {
+
+const HeroContainer = ({ className, content, children }: HeroContainerProps) => {
   const { scrollRef, scrollYProgress } = useScrollAnimation();
   return (
-    <HeroContainerContext.Provider value={{ scrollYProgress }}>
-      <section
-        ref={scrollRef}
-        className={cn("relative has-[video]:h-[350vh]", className)}
-      >
+    <HeroContainerContext.Provider value={{scrollYProgress, content}}>
+      <section ref={scrollRef} className={cn("relative has-[video]:h-[350vh]", className)}>
         {children}
       </section>
     </HeroContainerContext.Provider>
-  );
-};
-type HeroContentProps = PropsWithChildren & {
-  className?: string;
-};
+  )
+}
 
-const HeroContent = ({ className, children }: HeroContentProps) => {
-  const { revealRef, isInView } = useRevealAnimation();
+type HeroContainerWrapProps = PropsWithChildren & {
+  className?: string;
+}
+const HeroWrap = ({ className, children }: HeroContainerWrapProps) => {
+
   return (
-    <motion.div
-      ref={revealRef}
-      variants={transformVariants()}
-      initial="hidden"
-      transition={{ delay: 1.1 }}
-      animate={isInView ? "visible" : "hidden"}
-      className={cn("mt-6", className)}
-    >
+    <div className={cn(className)}>
       {children}
-    </motion.div>
-  );
-};
+    </div>
+  )
+}
+type HeroTitleProps = {
+  className?: string;
+}
+const HeroHeading = ({className}: HeroTitleProps) => {  
+  const { content } = useHeroContainerContext();
+  return (
+    <ContainerVelocity className={cn("w-full my-8 overflow-hidden", className)} baseVelocity={3}>
+      <h1>{content.heading.toUpperCase()}</h1>
+      <p className="text-primary-1">{content.title}</p>
+    </ContainerVelocity>
+  )
+}
+
+type HeroDescriptionProps = {
+  className?: string;
+}
+const HeroDescription = ({className}: HeroDescriptionProps) => {  
+  const { content } = useHeroContainerContext();
+  return (
+    <div className={cn("basis-1/2 md:basis-1/4 text-xs md:text-sm text-neutral-300", className)}>
+      <p>{content.description}</p>
+    </div>
+  )
+}
+
+type HeroCtaProps = PropsWithChildren &{
+  className?: string;
+}
+const HeroCta = ({className, children}: HeroCtaProps) => {  
+  return (
+    <div className={cn(className)}>
+      {children}
+    </div>
+  )
+}
+
 type HeroVideoProps = PropsWithChildren & {
   className?: string;
-  videoUrl: string;
 };
-const HeroVideo = ({ className, videoUrl }: HeroVideoProps) => {
-  const { scrollYProgress } = useHeroContainerContext();
+const HeroVideo = ({ className }: HeroVideoProps) => {
+  const { scrollYProgress, content } = useHeroContainerContext();
   const scale = useTransform(scrollYProgress, [0, 0.8], [0.4, 1]);
 
   return (
@@ -70,17 +102,23 @@ const HeroVideo = ({ className, videoUrl }: HeroVideoProps) => {
         className
       )}
     >
-      <motion.video
+      <motion.video 
         className="align-middle origin-top object-cover size-full"
         playsInline
         loop
         muted
         autoPlay
         style={{ scale }}
-        src={videoUrl}
+        src={content.videoUrl}
       />
     </div>
   );
 };
-
-export { HeroContainer, HeroVideo, HeroContent };
+export {
+  HeroContainer,
+  HeroWrap,
+  HeroHeading,
+  HeroDescription,
+  HeroCta,
+  HeroVideo
+}

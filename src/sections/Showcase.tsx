@@ -1,3 +1,4 @@
+import ContainerVelocity from "@/components/ContainerVelocity";
 import { showcaseContent } from "@/constants/data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { motion, useTransform } from "framer-motion";
@@ -22,11 +23,12 @@ const Showcase = () => {
     <section
       ref={scrollRef}
       style={{ height: `${showcaseContent.length + 1}00vh` }}
-      className="relative px-default"
+      className="relative"
     >
+      <div className="sticky inset-0 min-h-screen w-full place-content-center">
       <motion.div
         style={{ clipPath }}
-        className="sticky inset-0 min-h-screen w-full grid grid-cols-12 grid-rows-[repeat(3,max-content)] gap-4 place-content-center"
+        className=" grid px-default grid-cols-12 grid-rows-[repeat(3,max-content)] gap-4 place-content-center"
       >
         {showcaseContent.map((item, index) => (
           <motion.figure
@@ -36,8 +38,8 @@ const Showcase = () => {
           >
             <img
               loading="lazy"
-              width={1024}
-              height={641}
+              width={480}
+              height={312}
               decoding="async"
               alt="portfolio showcase"
               className="size-full object-contain"
@@ -45,7 +47,17 @@ const Showcase = () => {
             />
           </motion.figure>
         ))}
+        
+        
       </motion.div>
+      <div className="w-full my-4">
+          <ContainerVelocity baseVelocity={3}>
+            <h3 className="uppercase text-neutral-500">
+            Crafting seamless user experiences with modern web technologies
+            </h3>
+            </ContainerVelocity>
+        </div>
+      </div>
     </section>
   );
 };

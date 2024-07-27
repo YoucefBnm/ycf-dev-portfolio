@@ -56,7 +56,7 @@ const Skills = () => {
           {skills.map((skil) => (
             <motion.li
               key={skil.id}
-              className=" bg-zinc-800 bg-opacity-85 rounded-md size-28  flex-center flex-col gap-4"
+              className=" bg-zinc-800 bg-opacity-85 rounded-md size-24 flex-center flex-col gap-4"
               variants={transformVariants()}
             >
               <span className="inline-block">
@@ -68,7 +68,7 @@ const Skills = () => {
                   alt={skil.label}
                 />
               </span>
-              <span className="inline-block text-white text-sm">
+              <span className="inline-block text-white text-xs">
                 {skil.label}
               </span>
             </motion.li>
