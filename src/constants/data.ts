@@ -1,7 +1,7 @@
 import {
   ActifeetVideo,
   CssIcon,
-  Es6Icon,
+  // Es6Icon,
   FigmaIcon,
   FirebaseIcon,
   GitIcon,
@@ -363,11 +363,11 @@ export const skills = [
     label: "TypeScript",
     icon: TypescriptIcon,
   },
-  {
-    id: "skill-ES6",
-    label: "ES6",
-    icon: Es6Icon,
-  },
+  // {
+  //   id: "skill-ES6",
+  //   label: "ES6",
+  //   icon: Es6Icon,
+  // },
   {
     id: "skill-react",
     label: "React",

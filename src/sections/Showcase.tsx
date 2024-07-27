@@ -48,15 +48,15 @@ const Showcase = () => {
           </motion.figure>
         ))}
         
-        
-      </motion.div>
-      <div className="w-full my-4">
-          <ContainerVelocity baseVelocity={3}>
-            <h3 className="uppercase text-neutral-500">
+        <div className="absolute w-full my-4 top-1/2 -translate-y-1/2 left-0 mix-blend-difference">
+          <ContainerVelocity baseVelocity={1}>
+            <h3 className="uppercase">
             Crafting seamless user experiences with modern web technologies
             </h3>
             </ContainerVelocity>
         </div>
+      </motion.div>
+      
       </div>
     </section>
   );

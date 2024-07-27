@@ -1,4 +1,3 @@
-import { Card, CardBody, CardFooter } from "@/components/Card";
 import ContainerVelocity from "@/components/ContainerVelocity";
 import { portfolioProjects } from "@/constants/data";
 import RouteTransition from "@/hoc/RouteTransition";
@@ -24,16 +23,14 @@ const Portfolio = () => {
       </section>
 
       <section className="px-default py-12 relative">
-        <div className="md:grid flex flex-wrap grid-cols-12 gap-6">
+        <div className="md:grid flex flex-wrap grid-cols-12 gap-6 items-start">
           {portfoliProjectsArray.map((project) => (
-            <Card
-              content={project}
+            <div key={project.id} 
               className={`
-                rounded-xl bg-opacity-40 bg-zinc-800 border border-zinc-800 col-span-6 
+                rounded-xl bg-opacity-40 bg-zinc-800 border border-zinc-800 col-span-6 overflow-hidden
               `}
             >
-              <CardBody className="">
-                <Link to={project.id} className="overflow-hidden ">
+               <Link to={project.id} className="overflow-hidden block">
                   <motion.img
                     whileHover={{ scale: 1.2 }}
                     transition={{ type: "spring", damping: 50 }}
@@ -44,18 +41,28 @@ const Portfolio = () => {
                     loading="lazy"
                   />
                 </Link>
-              </CardBody>
 
-              <CardFooter className="flex-wrap gap-y-4 px-6 py-8">
+               <div className="py-6 px-4">
+                <h3>{project.title}</h3>
+                <p className="text-neutral-400 my-4 text-xs">
+                  {project.profile}
+                </p>
                 <div className="flex flex-wrap gap-4">
-                  {project.services.map((service) => (
-                    <div key={service} className="tag">
-                      {service}
-                    </div>
-                  ))}
-                </div>
-              </CardFooter>
-            </Card>
+                    {project.services.map((service) => (
+                      <div key={service} className="tag">
+                        {service}
+                      </div>
+                    ))}
+                    {
+                      project.stack.map((stack) => (
+                        <div key={stack} className="tag !bg-primary-1">
+                          {stack}
+                        </div>
+                      ))
+                    }
+                  </div>
+               </div>
+            </div>
           ))}
         </div>
       </section>
