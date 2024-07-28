@@ -41,6 +41,9 @@ import ShowcaseKatadysiCtaImage from "./images/showcase-katadysi-cta.jpg?w=480&h
 import ShowcaseActifeetHeroImage from "./images/showcase-actifeet-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
 import ShowcaseActifeetHikingImage from "./images/showcase-actifeet-hiking.jpg?w=480&h=312&format=webp&meta&imagetools"
 
+// SEO
+import HomeBanner from "./images/home-banner.png"
+
 export {
   HeroVideo,
   ActifeetVideo,
@@ -79,4 +82,5 @@ export {
   ShowcaseActifeetHeroImage,
   ShowcaseActifeetHikingImage,
   ShowcaseKatadysiCtaImage,
+  HomeBanner,
 };
