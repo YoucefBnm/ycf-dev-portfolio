@@ -18,10 +18,9 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import RouteTransition from "@/hoc/RouteTransition";
-import { HeroContainer, HeroContent } from "@/components/HeroContainer";
-import ContainerVelocity from "@/components/ContainerVelocity";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@/components/ui/use-toast";
+import { HeroContainer, HeroHeading, HeroWrap } from "@/components/HeroContainer";
 
 const formSchema = z.object({
   name: z.string().min(3).max(50),
@@ -103,13 +102,9 @@ const Questionnaire = () => {
   const navigateToBooking = () => navigate("/booking");
   return (
     <main className="">
-      <HeroContainer className="min-h-[70svh] place-content-center">
-        <HeroContent className="flex flex-col gap-4 mb-4">
-          <div className="relative mix-blend-difference place-content-end overflow-hidden col-span-12">
-            <ContainerVelocity baseVelocity={3}>
-              <h1>{questionnaireContent.title.toUpperCase()}</h1>
-            </ContainerVelocity>
-          </div>
+      <HeroContainer className="place-content-center py-12" content={questionnaireContent}>
+        <HeroWrap>
+          <HeroHeading />
 
           <div className="px-default col-span-12 flex justify-between gap-4 items-end">
             <Button
@@ -123,7 +118,7 @@ const Questionnaire = () => {
               {questionnaireContent.description}
             </p>
           </div>
-        </HeroContent>
+        </HeroWrap>
       </HeroContainer>
 
       <section className="py-12 px-default bg-zinc-50 text-black">

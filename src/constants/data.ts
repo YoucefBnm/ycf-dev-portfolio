@@ -421,7 +421,7 @@ export const skills = [
 ];
 
 export const questionnaireContent = {
-  title: "Let's build something great together",
+  heading: "Let's build something great together",
   description:
     "This quaistionnaire is aiming to gather all necessary information and to align on the project objectives.",
 };
