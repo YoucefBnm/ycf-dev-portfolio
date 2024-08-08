@@ -9,7 +9,6 @@ const Booking = lazy(() => import("@routes/Booking"));
 const Questionnaire = lazy(() => import("@routes/Questionnaire"));
 const Portfolio = lazy(() => import("@routes/Portfolio"));
 const PortfolioItem = lazy(() => import("@routes/PortfolioItem"));
-const Services = lazy(() => import("@routes/Services"));
 
 function App() {
   return (
@@ -22,7 +21,6 @@ function App() {
           <Route path="/questionnaire" element={<Questionnaire />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:projectId" element={<PortfolioItem />} />
-          <Route path="/services" element={<Services />} />
         </Routes>
       </AnimatePresence>
       <Footer />
