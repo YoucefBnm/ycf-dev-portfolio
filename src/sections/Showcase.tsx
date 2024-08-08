@@ -1,64 +1,129 @@
-import ContainerVelocity from "@/components/ContainerVelocity";
 import { showcaseContent } from "@/constants/data";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import { motion, useTransform } from "framer-motion";
+import {
+  motion,
+  useMotionTemplate,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import { useRef } from "react";
 
+const SECTION_HEIGHT = 1500;
 const Showcase = () => {
-  const clipPathHidden = "polygon(33% 33%, 67% 33%, 67% 67%, 33% 67%)";
-  const clipPathVisible = "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)";
-
-  const { scrollRef, scrollYProgress } = useScrollAnimation();
-
-  const clipPath = useTransform(
-    scrollYProgress,
-    [0, 0.7],
-    [clipPathHidden, clipPathVisible]
-  );
-
-  const middleItem = Math.floor(showcaseContent.length / 2);
-
-  const scale = useTransform(scrollYProgress, [0, 0.7], [0.33, 1]);
-
   return (
     <section
-      ref={scrollRef}
-      style={{ height: `${showcaseContent.length + 1}00vh` }}
-      className="relative"
+      className="relative w-full"
+      style={{ height: `calc(${SECTION_HEIGHT}px + 100vh)` }}
     >
-      <div className="sticky inset-0 min-h-screen w-full place-content-center">
-      <motion.div
-        style={{ clipPath }}
-        className=" grid px-default grid-cols-12 grid-rows-[repeat(3,max-content)] gap-4 place-content-center"
-      >
-        {showcaseContent.map((item, index) => (
-          <motion.figure
-            key={item.id}
-            className="showcase-figure"
-            style={index !== middleItem ? { scale } : { scale: 1 }}
-          >
-            <img
-              loading="lazy"
-              width={480}
-              height={312}
-              decoding="async"
-              alt="portfolio showcase"
-              className="size-full object-contain"
-              src={item.imageUrl}
-            />
-          </motion.figure>
-        ))}
-        
-        <div className="absolute w-full my-4 top-1/2 -translate-y-1/2 left-0 mix-blend-difference">
-          <ContainerVelocity baseVelocity={1}>
-            <h3 className="uppercase">
-            Crafting seamless user experiences with modern web technologies
-            </h3>
-            </ContainerVelocity>
-        </div>
-      </motion.div>
-      
-      </div>
+      <MainImage />
+      <ParallaxImages />
     </section>
+  );
+};
+
+const MainImage = () => {
+  const { scrollY } = useScrollAnimation();
+
+  const backgroundSize = useTransform(
+    scrollY,
+    [0, SECTION_HEIGHT],
+    ["170%", "100%"]
+  );
+  const clip1 = useTransform(scrollY, [0, SECTION_HEIGHT], [25, 0]);
+  const clip2 = useTransform(scrollY, [0, SECTION_HEIGHT], [75, 100]);
+
+  const clipPath = useMotionTemplate`polygon(${clip1}% ${clip1}%, ${clip2}% ${clip1}%, ${clip2}% ${clip2}%, ${clip1}% ${clip2}%)`;
+
+  return (
+    <motion.div
+      className="sticky top-0 h-screen w-3/4 mx-auto"
+      style={{
+        backgroundImage: `url(${showcaseContent[3].imageUrl})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize,
+        clipPath,
+      }}
+    />
+  );
+};
+
+const ParallaxImages = () => {
+  return (
+    <div className="px-default flex flex-wrap justify-between gap-4 w-full h-screen">
+      <ParallaxImage
+        className="w-2/5 h-auto object-contain"
+        imageUrl={showcaseContent[0].imageUrl}
+        start={-200}
+        end={-250}
+      />
+      <ParallaxImage
+        className="w-2/5 h-auto object-contain"
+        imageUrl={showcaseContent[1].imageUrl}
+        start={-200}
+        end={-250}
+      />
+      <ParallaxImage
+        className="w-2/5 h-auto object-contain"
+        imageUrl={showcaseContent[2].imageUrl}
+        start={-150}
+        end={-200}
+      />
+      <ParallaxImage
+        className="w-2/5 h-auto object-contain"
+        imageUrl={showcaseContent[4].imageUrl}
+        start={-150}
+        end={-200}
+      />
+      <ParallaxImage
+        className="w-2/5 h-auto object-contain"
+        imageUrl={showcaseContent[5].imageUrl}
+        start={-50}
+        end={200}
+      />
+      <ParallaxImage
+        className="w-2/5 h-auto object-contain"
+        imageUrl={showcaseContent[6].imageUrl}
+        start={-50}
+        end={200}
+      />
+    </div>
+  );
+};
+
+const ParallaxImage = ({
+  className,
+  imageUrl,
+  start,
+  end,
+}: {
+  className?: string;
+  imageUrl: string;
+  start: number;
+  end: number;
+}) => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: [`${start}px end`, `end ${end * -1}px`],
+  });
+  const opacity = useTransform(scrollYProgress, [0.75, 1], [1, 0]);
+  const scale = useTransform(scrollYProgress, [0.75, 1], [1, 0.85]);
+  const y = useTransform(scrollYProgress, [0, 1], [start, end]);
+  const transform = useMotionTemplate`scale(${scale}) translateY(${y}px)`;
+
+  return (
+    <motion.img
+      style={{ opacity, transform }}
+      ref={ref}
+      loading="eager"
+      width={480}
+      height={312}
+      decoding="async"
+      alt="portfolio showcase"
+      className={className}
+      src={imageUrl}
+    />
   );
 };
 

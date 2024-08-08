@@ -51,8 +51,6 @@
     @apply rounded-full bg-primary-1
 }
 
-#root {}
-
 body {
     /* @apply bg-zinc-800 text-neutral-200 font-body font-normal leading-normal text-xl */
     @apply font-body font-normal leading-normal bg-neutral-900 text-white
@@ -140,4 +138,25 @@ h3 {
 
 .tag {
     @apply bg-white text-neutral-900 text-xs capitalize rounded-full px-3 py-1
+}
+
+
+html.lenis, html.lenis body {
+    height: auto;
+}
+
+.lenis.lenis-smooth {
+    scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+    overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+    overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+    pointer-events: none;
 }

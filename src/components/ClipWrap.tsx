@@ -96,7 +96,7 @@ const ClipWrapImage = ({ className }: ClipWrapImageProps) => {
     >
       <motion.img
         className="object-cover size-full min-w-full inset-0"
-        loading="lazy"
+        loading="eager"
         decoding="async"
         style={{ scale }}
         width={2000}

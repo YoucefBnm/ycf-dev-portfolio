@@ -58,6 +58,7 @@ const Skills = () => {
               key={skil.id}
               className=" bg-zinc-800 bg-opacity-85 rounded-md size-24 flex-center flex-col gap-4"
               variants={transformVariants()}
+              transition={{ duration: 0.3 }}
             >
               <span className="inline-block">
                 <img

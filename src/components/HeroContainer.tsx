@@ -8,18 +8,20 @@ type HeroContent = {
   heading: string;
   title?: string;
   description?: string;
-  videoUrl?: string
-}
+  videoUrl?: string;
+};
 type HeroContainerContextValue = {
   scrollYProgress: MotionValue<number>;
   content: HeroContent;
-}
+};
 type HeroContainerProps = PropsWithChildren & {
   className?: string;
   content: HeroContent;
-}
+};
 
-const HeroContainerContext = createContext<HeroContainerContextValue | undefined>(undefined);
+const HeroContainerContext = createContext<
+  HeroContainerContextValue | undefined
+>(undefined);
 function useHeroContainerContext() {
   const context = useContext(HeroContainerContext);
 
@@ -30,63 +32,69 @@ function useHeroContainerContext() {
   return context;
 }
 
-const HeroContainer = ({ className, content, children }: HeroContainerProps) => {
+const HeroContainer = ({
+  className,
+  content,
+  children,
+}: HeroContainerProps) => {
   const { scrollRef, scrollYProgress } = useScrollAnimation();
   return (
-    <HeroContainerContext.Provider value={{scrollYProgress, content}}>
-      <section ref={scrollRef} className={cn("relative has-[video]:h-[350vh]", className)}>
+    <HeroContainerContext.Provider value={{ scrollYProgress, content }}>
+      <section
+        ref={scrollRef}
+        className={cn("relative has-[video]:h-[300vh]", className)}
+      >
         {children}
       </section>
     </HeroContainerContext.Provider>
-  )
-}
+  );
+};
 
 type HeroContainerWrapProps = PropsWithChildren & {
   className?: string;
-}
+};
 const HeroWrap = ({ className, children }: HeroContainerWrapProps) => {
-
-  return (
-    <div className={cn(className)}>
-      {children}
-    </div>
-  )
-}
+  return <div className={cn(className)}>{children}</div>;
+};
 type HeroTitleProps = {
   className?: string;
-}
-const HeroHeading = ({className}: HeroTitleProps) => {  
+};
+const HeroHeading = ({ className }: HeroTitleProps) => {
   const { content } = useHeroContainerContext();
   return (
-    <ContainerVelocity className={cn("w-full my-8 overflow-hidden", className)} baseVelocity={3}>
+    <ContainerVelocity
+      className={cn("w-full my-8 overflow-hidden", className)}
+      baseVelocity={3}
+    >
       <h1>{content.heading.toUpperCase()}</h1>
       <p className="text-primary-1">{content.title}</p>
     </ContainerVelocity>
-  )
-}
+  );
+};
 
 type HeroDescriptionProps = {
   className?: string;
-}
-const HeroDescription = ({className}: HeroDescriptionProps) => {  
+};
+const HeroDescription = ({ className }: HeroDescriptionProps) => {
   const { content } = useHeroContainerContext();
   return (
-    <div className={cn("basis-1/2 md:basis-1/4 text-xs md:text-sm text-neutral-300", className)}>
+    <div
+      className={cn(
+        "basis-1/2 md:basis-1/4 text-xs md:text-sm text-neutral-300",
+        className
+      )}
+    >
       <p>{content.description}</p>
     </div>
-  )
-}
+  );
+};
 
-type HeroCtaProps = PropsWithChildren &{
+type HeroCtaProps = PropsWithChildren & {
   className?: string;
-}
-const HeroCta = ({className, children}: HeroCtaProps) => {  
-  return (
-    <div className={cn(className)}>
-      {children}
-    </div>
-  )
-}
+};
+const HeroCta = ({ className, children }: HeroCtaProps) => {
+  return <div className={cn(className)}>{children}</div>;
+};
 
 type HeroVideoProps = PropsWithChildren & {
   className?: string;
@@ -102,7 +110,7 @@ const HeroVideo = ({ className }: HeroVideoProps) => {
         className
       )}
     >
-      <motion.video 
+      <motion.video
         className="align-middle origin-top object-cover size-full"
         playsInline
         loop
@@ -120,5 +128,5 @@ export {
   HeroHeading,
   HeroDescription,
   HeroCta,
-  HeroVideo
-}
+  HeroVideo,
+};

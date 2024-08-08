@@ -33,16 +33,16 @@ import WorkActifeetImage from "./images/work-actifeet.jpg?w=1440&h=936&format=we
 import WorkVisiocraftImage from "./images/work-visiocraft.jpg?w=1440&h=936&format=webp&meta&imagetools";
 import WorkBizadvisorImage from "./images/work-bizadvisor.jpg?w=1440&h=936&format=webp&meta&imagetools";
 import WorkKatadysiImage from "./images/work-katadisy.jpg?w=1440&h=936&format=webp&meta&imagetools";
-import ShowcaseGreenTradeHeroImage from "./images/showcase-greentrade-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
-import ShowcaseKatadysiHeroImage from "./images/showcase-katadysi-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
-import ShowcaseGreenTradeFeatureImage from "./images/showcase-greentrade-features.jpg?w=480&h=312&format=webp&meta&imagetools"
-import ShowcaseVisiocraftHeroImage from "./images/showcase-visiocraft-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
-import ShowcaseKatadysiCtaImage from "./images/showcase-katadysi-cta.jpg?w=480&h=312&format=webp&meta&imagetools"
-import ShowcaseActifeetHeroImage from "./images/showcase-actifeet-hero.jpg?w=480&h=312&format=webp&meta&imagetools"
-import ShowcaseActifeetHikingImage from "./images/showcase-actifeet-hiking.jpg?w=480&h=312&format=webp&meta&imagetools"
+import ShowcaseGreenTradeHeroImage from "./images/showcase-greentrade-hero.jpg?w=480&h=312&format=webp&meta&imagetools";
+import ShowcaseKatadysiHeroImage from "./images/showcase-katadysi-hero.jpg?w=480&h=312&format=webp&meta&imagetools";
+import ShowcaseGreenTradeFeatureImage from "./images/showcase-greentrade-features.jpg?w=480&h=312&format=webp&meta&imagetools";
+import ShowcaseVisiocraftHeroImage from "./images/showcase-visiocraft-hero.jpg?w=1440&h=936&format=webp&meta&imagetools";
+import ShowcaseKatadysiCtaImage from "./images/showcase-katadysi-cta.jpg?w=480&h=312&format=webp&meta&imagetools";
+import ShowcaseActifeetHeroImage from "./images/showcase-actifeet-hero.jpg?w=480&h=312&format=webp&meta&imagetools";
+import ShowcaseActifeetHikingImage from "./images/showcase-actifeet-hiking.jpg?w=480&h=312&format=webp&meta&imagetools";
 
 // SEO
-import HomeBanner from "./images/home-banner.png"
+import HomeBanner from "./images/home-banner.png";
 
 export {
   HeroVideo,

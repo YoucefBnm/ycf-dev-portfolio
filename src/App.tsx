@@ -3,13 +3,13 @@ import Footer from "./sections/Footer";
 import { Suspense, lazy } from "react";
 import { AnimatePresence } from "framer-motion";
 import Nav from "./sections/Nav";
-import Services from "./sections/Services";
 
 const Home = lazy(() => import("@routes/Home"));
 const Booking = lazy(() => import("@routes/Booking"));
 const Questionnaire = lazy(() => import("@routes/Questionnaire"));
 const Portfolio = lazy(() => import("@routes/Portfolio"));
 const PortfolioItem = lazy(() => import("@routes/PortfolioItem"));
+const Services = lazy(() => import("@routes/Services"));
 
 function App() {
   return (
@@ -20,9 +20,9 @@ function App() {
           <Route index element={<Home />} />
           <Route path="/booking" element={<Booking />} />
           <Route path="/questionnaire" element={<Questionnaire />} />
-          <Route path="/services" element={<Services />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/portfolio/:projectId" element={<PortfolioItem />} />
+          <Route path="/services" element={<Services />} />
         </Routes>
       </AnimatePresence>
       <Footer />
